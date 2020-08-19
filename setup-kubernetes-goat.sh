@@ -14,10 +14,10 @@ else
 fi
 
 # Checking helm2 setup
-helm2 --help > /dev/null 2>&1
+helm --help > /dev/null 2>&1
 if [ $? -eq 0 ];
 then
-    echo "helm2 setup looks good."
+    echo "helm setup looks good."
 else
     echo "Error: Could not find helm2, please check helm2 setup."
     exit;
@@ -34,7 +34,7 @@ sleep 50
 
 # deploying helm chart to verify the setup
 echo "deploying helm chart metadata-db scenario"
-helm2 install --name metadata-db scenarios/metadata-db/
+helm install --name metadata-db scenarios/metadata-db/
 
 # setup the scenarios/configurations
 echo 'deploying the vulnerable scenarios manifests'
